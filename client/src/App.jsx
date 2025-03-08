@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useMatch,
+} from "react-router-dom";
 import Home from "./pages/student/Home";
 import MyEnrollement from "./pages/student/MyEnrollement";
 import CourseList from "./pages/student/CourseList";
@@ -13,10 +18,17 @@ import NavBar from "./components/educator/NavBar";
 import Footer from "./components/educator/Footer";
 import Dashboard from "./pages/educator/Dashboard";
 
-function AppRoutes() {
+function App() {
+  return <MainContent />;
+}
+
+function MainContent() {
+  const isEducatorRoute = useMatch("/educator/*");
+
   return (
-    <Router>
-      <NavBar /> {/* Common Navbar for all pages */}
+    <div className="text-default min-h-screen bgwhite">
+      {!isEducatorRoute && <NavBar />}{" "}
+      {/* Render NavBar only for educator routes */}
       <Routes>
         {/* Student Routes */}
         <Route path="/" element={<Home />} />
@@ -28,15 +40,15 @@ function AppRoutes() {
 
         {/* Educator Routes */}
         <Route path="/educator" element={<Educator />}>
-          <Route index element={<Dashboard />} />{" "}
+          <Route index element={<Dashboard />} />
           <Route path="add-course" element={<AddCourse />} />
           <Route path="my-courses" element={<MyCourses />} />
           <Route path="students-enrolled" element={<StudentEnrolled />} />
         </Route>
       </Routes>
       <Footer /> {/* Common Footer for all pages */}
-    </Router>
+    </div>
   );
 }
 
-export default AppRoutes;
+export default App;
