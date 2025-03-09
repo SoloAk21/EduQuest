@@ -14,8 +14,8 @@ import AddCourse from "./pages/educator/AddCourse";
 import Educator from "./pages/educator/Educator";
 import MyCourses from "./pages/educator/MyCourses";
 import StudentEnrolled from "./pages/educator/StudentEnrolled";
-import NavBar from "./components/educator/NavBar";
-import Footer from "./components/educator/Footer";
+import NavBar from "./components/student/NavBar";
+import Footer from "./components/student/Footer";
 import Dashboard from "./pages/educator/Dashboard";
 
 function App() {
@@ -47,7 +47,6 @@ function MainContent() {
           <Route path="students-enrolled" element={<StudentEnrolled />} />
         </Route>
       </Routes>
-      <Footer /> {/* Common Footer for all pages */}
     </div>
   );
 }

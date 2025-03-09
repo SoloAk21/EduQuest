@@ -4,6 +4,7 @@ import AppContext from "../../context/AppContext";
 import SearchBar from "../../components/student/SearchBar"; // Import the SearchBar component
 import CourseCard from "../../components/student/CourseCard";
 import { assets } from "../../assets/assets";
+import Footer from "../../components/student/Footer";
 
 export default function CourseList() {
   const { allCourses } = useContext(AppContext); // Access allCourses from context
@@ -35,49 +36,57 @@ export default function CourseList() {
   };
 
   return (
-    <div className="relative md:px-36 px-8 pt-20 text-left">
-      {/* Header Section */}
-      <div className="flex md:flex-row flex-col gap-6 items-start justify-between w-full">
-        <div>
-          <h1 className="text-4xl font-semibold text-gray-800">Course List</h1>
-          <p className="text-gray-500">
-            <Link to="/">
-              {" "}
-              <span className="text-blue-600 cursor-pointer">Home</span> /{" "}
-            </Link>
-            <span>Course List</span>
-          </p>
+    <>
+      {" "}
+      <div className="relative md:px-36 px-8 pt-20 text-left">
+        {/* Header Section */}
+        <div className="flex md:flex-row flex-col gap-6 items-start justify-between w-full">
+          <div>
+            <h1 className="text-4xl font-semibold text-gray-800">
+              Course List
+            </h1>
+            <p className="text-gray-500">
+              <Link to="/">
+                {" "}
+                <span className="text-blue-600 cursor-pointer">
+                  Home
+                </span> /{" "}
+              </Link>
+              <span>Course List</span>
+            </p>
+          </div>
+
+          {/* Search Bar */}
+          <SearchBar data={input} />
         </div>
 
-        {/* Search Bar */}
-        <SearchBar data={input} />
-      </div>
-
-      {/* Display search term and clear button */}
-      {input && (
-        <div className="inline-flex items-center gap-4 px-4 py-2 border mt-8 -mb-8 text-gray-600">
-          <p>{input}</p>
-          <img
-            className="cursor-pointer"
-            src={assets.cross_icon}
-            alt="Clear search"
-            onClick={clearSearch} // Clear search on click
-          />
-        </div>
-      )}
-
-      {/* Course Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-16 gap-3 px-2 md:p-0">
-        {filteredCourses.length > 0 ? (
-          filteredCourses.map((course) => (
-            <CourseCard key={course._id} course={course} />
-          ))
-        ) : (
-          <p className="text-center text-gray-500 col-span-full">
-            No courses found.
-          </p>
+        {/* Display search term and clear button */}
+        {input && (
+          <div className="inline-flex items-center gap-4 px-4 py-2 border mt-8 -mb-8 text-gray-600">
+            <p>{input}</p>
+            <img
+              className="cursor-pointer"
+              src={assets.cross_icon}
+              alt="Clear search"
+              onClick={clearSearch} // Clear search on click
+            />
+          </div>
         )}
+
+        {/* Course Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-16 gap-3 px-2 md:p-0">
+          {filteredCourses.length > 0 ? (
+            filteredCourses.map((course) => (
+              <CourseCard key={course._id} course={course} />
+            ))
+          ) : (
+            <p className="text-center text-gray-500 col-span-full">
+              No courses found.
+            </p>
+          )}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

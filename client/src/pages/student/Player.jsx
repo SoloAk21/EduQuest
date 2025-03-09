@@ -5,6 +5,7 @@ import humanizeDuration from "humanize-duration";
 import { assets } from "../../assets/assets";
 import YouTube from "react-youtube";
 import Rating from "../../components/student/Rating";
+import Footer from "../../components/student/Footer";
 
 function Player() {
   const { enrolledCourses, calculateChapterTime } = useContext(AppContext);
@@ -198,6 +199,7 @@ function Player() {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
