@@ -4,9 +4,9 @@ import search_icon from "./search_icon.svg";
 import cross_icon from "./cross_icon.svg";
 import upload_area from "./upload_area.svg";
 import sketch from "./sktech.svg";
-import microsoft_logo from "./microsoft_logo.svg";
-import walmart_logo from "./walmart_logo.svg";
-import accenture_logo from "./accenture_logo.svg";
+import ethio_logo from "./ethio_logo.png";
+import chapa_logo from "./chapa_logo.svg";
+import ministry_of_edu_logo from "./ministry_of_edu_logo.svg";
 import adobe_logo from "./adobe_logo.svg";
 import paypal_logo from "./paypal_logo.svg";
 import course_1_thumbnail from "./course_1.png";
@@ -47,9 +47,9 @@ export const assets = {
   logo,
   search_icon,
   sketch,
-  microsoft_logo,
-  walmart_logo,
-  accenture_logo,
+  ethio_logo,
+  chapa_logo,
+  ministry_of_edu_logo,
   adobe_logo,
   paypal_logo,
   course_1_thumbnail,
@@ -92,7 +92,7 @@ export const assets = {
 
 export const dummyEducatorData = {
   _id: "675ac1512100b91a6d9b8b24",
-  name: "GreatStack",
+  name: "SoloAk",
   email: "user.greatstack@gmail.com",
   imageUrl:
     "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yclFkaDBOMmFqWnBoTTRBOXZUanZxVlo0aXYifQ",
@@ -184,7 +184,7 @@ export const dummyStudentEnrolled = [
   {
     student: {
       _id: "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
-      name: "GreatStack",
+      name: "SoloAk",
       imageUrl:
         "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ",
     },
@@ -194,7 +194,7 @@ export const dummyStudentEnrolled = [
   {
     student: {
       _id: "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
-      name: "GreatStack",
+      name: "SoloAk",
       imageUrl:
         "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ",
     },
@@ -204,7 +204,7 @@ export const dummyStudentEnrolled = [
   {
     student: {
       _id: "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
-      name: "GreatStack",
+      name: "SoloAk",
       imageUrl:
         "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ",
     },
@@ -214,7 +214,7 @@ export const dummyStudentEnrolled = [
   {
     student: {
       _id: "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
-      name: "GreatStack",
+      name: "SoloAk",
       imageUrl:
         "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ",
     },

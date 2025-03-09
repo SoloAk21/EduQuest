@@ -34,7 +34,8 @@ function MainContent() {
         <Route path="/" element={<Home />} />
         <Route path="/my-enrollment" element={<MyEnrollement />} />
         <Route path="/course-list" element={<CourseList />} />
-        <Route path="/course-details/:id" element={<CourseDeatils />} />
+        <Route path="/course-list/:input" element={<CourseList />} />
+        <Route path="/course/:id" element={<CourseDeatils />} />
         <Route path="/player/:id" element={<Player />} />
         <Route path="/loading/:path" element={<Loading />} />
 

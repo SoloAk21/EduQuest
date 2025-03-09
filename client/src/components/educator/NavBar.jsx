@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { assets } from "../../assets/assets.js";
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
+import AppContext from "../../context/AppContext.jsx";
 
 function NavBar() {
+  const { navigate, isEducator } = useContext(AppContext);
   const isCourseListPage = location.pathname.includes("/course-list");
   const { openSignIn } = useClerk();
   const { user } = useUser();
@@ -21,8 +23,10 @@ function NavBar() {
 
       <div className="hidden md:flex items-center gap-5 text-gray-500">
         <div className="flex items-center gap-5">
-          <button>Become Educator</button>|{" "}
-          <Link to="/my-enrollment">My Enrollments</Link>
+          <button onClick={() => navigate("/educator")}>
+            {isEducator ? "Educator Dashboard" : "Become Educator"}
+          </button>{" "}
+          |<Link to="/my-enrollment">My Enrollments</Link>
           {user ? (
             <UserButton />
           ) : (
@@ -36,12 +40,14 @@ function NavBar() {
         </div>
       </div>
       {/* for phone screens */}
-      <div className=" flex md:hidden gap-3">
+      <div className=" flex md:hidden  gap-3">
         {user && (
-          <>
-            <button>Become Educator</button>|{" "}
-            <Link to="/my-enrollment">My Enrollments</Link>
-          </>
+          <span className="flex items-center gap-3">
+            <button onClick={() => navigate("/educator")}>
+              {isEducator ? "Educator Dashboard" : "Become Educator"}
+            </button>
+            | <Link to="/my-enrollment">My Enrollments</Link>
+          </span>
         )}
         {user ? (
           <UserButton />
