@@ -1,9 +1,12 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../../context/AppContext";
+import { useNavigate } from "react-router-dom";
+
 import { Line } from "rc-progress";
 const MyEnrollments = () => {
-  const { enrolledCourses, calculateCourseDuration, navigate } =
-    useContext(AppContext);
+  const { enrolledCourses, calculateCourseDuration } = useContext(AppContext);
+  const navigate = useNavigate();
+
   const [progressArray, setProgressArray] = useState([
     { lectureCompleted: 2, totalLectures: 4 },
     { lectureCompleted: 5, totalLectures: 10 },
@@ -64,13 +67,15 @@ const MyEnrollments = () => {
               </td>
               <td className="px-4 py-3 max-sm:text-right">
                 <button
-                  onClick={() => navigate(`/player/${course._id}`)}
+                  onClick={() =>
+                    course._id && navigate(`/player/${course._id}`)
+                  }
                   className={`px-3 sm:px-5 py-2 border max-sm:text-xs ${
                     progressArray[index] &&
                     progressArray[index].lectureCompleted ===
                       progressArray[index].totalLectures
                       ? "bg-green-500 text-white " // Completed (Green)
-                      : "  border-gray-500/30" // Ongoing (Yellow)
+                      : "border-gray-500/30" // Ongoing (Yellow)
                   }`}
                 >
                   {progressArray[index] &&
