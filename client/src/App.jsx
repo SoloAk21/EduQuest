@@ -17,7 +17,7 @@ import StudentEnrolled from "./pages/educator/StudentEnrolled";
 import NavBar from "./components/student/NavBar";
 import Footer from "./components/student/Footer";
 import Dashboard from "./pages/educator/Dashboard";
-
+import "quill/dist/quill.snow.css";
 function App() {
   return <MainContent />;
 }
