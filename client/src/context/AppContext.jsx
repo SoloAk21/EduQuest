@@ -16,12 +16,14 @@ export const AppProvider = ({ children }) => {
   const [allCourses, setAllCourses] = useState([]);
   const [allTestimonials, setAllTestimonials] = useState([]);
   const [isEducator, setIsEducator] = useState(true);
+  const [enrolledCourses, setEnrolledCourses] = useState([]);
 
   const currency = import.meta.env.VITE_CURRENCY;
 
   useEffect(() => {
     fetchCourses();
     fetchTestimonials();
+    fetchUserEnrolledCourse();
   }, []);
 
   const fetchCourses = async () => {
@@ -66,6 +68,11 @@ export const AppProvider = ({ children }) => {
     return lectures;
   };
 
+  const fetchUserEnrolledCourse = (course) => {
+    // implement logic to fetch user enrolled course\
+    setEnrolledCourses(dummyCourses);
+  };
+
   const value = {
     user,
     setUser,
@@ -80,6 +87,8 @@ export const AppProvider = ({ children }) => {
     calculateNumberOfLectures,
     calculateCourseDuration,
     calculateChapterTime,
+    enrolledCourses,
+    setEnrolledCourses,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
