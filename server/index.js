@@ -2,8 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import { errorMiddleware } from "./middlewares/errorMiddleware";
-import { clerkWebhooks } from "./routes/webhookRoutes.js";
+import { errorMiddleware } from "./middlewares/errorMiddleware.js";
+import clerkWebhooks from "./routes/webhookRoutes.js";
 dotenv.config();
 
 const app = express();

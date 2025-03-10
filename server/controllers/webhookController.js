@@ -1,6 +1,6 @@
 import { Webhook } from "svix";
-import User from "../models/User";
-import { errorHandler } from "../utils/errorHandler";
+import User from "../models/User.js";
+import { errorHandler } from "../utils/errorHandler.js";
 
 export const clerkWebhooks = async (req, res, next) => {
   try {
