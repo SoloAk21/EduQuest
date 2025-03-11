@@ -25,6 +25,7 @@ export const clerkWebhooks = async (req, res, next) => {
           imageUrl: data.image_url,
         };
         await User.create(userData);
+        console.log("User saved successfully:", userData);
         break;
       }
       case "user.updated": {
@@ -49,6 +50,7 @@ export const clerkWebhooks = async (req, res, next) => {
       .status(200)
       .json({ success: true, message: "Webhook processed successfully" });
   } catch (error) {
+    console.error("Error processing webhook:", error);
     next(errorHandler(400, "Webhook verification or processing failed"));
   }
 };
