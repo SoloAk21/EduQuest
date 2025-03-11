@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URL = process.env.MONGO_URL;
 console.log("MONGO_URL: " + MONGO_URL);
 
-app.use("/", clerkWebhooks);
+app.use("/webhook", clerkWebhooks);
 
 app.use(errorMiddleware);
 // Basic route
