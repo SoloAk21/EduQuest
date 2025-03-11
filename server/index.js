@@ -13,6 +13,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URL = process.env.MONGO_URL;
+console.log("MONGO_URL: " + MONGO_URL);
 
 app.use("/api/webhooks", clerkWebhooks);
 
@@ -24,7 +25,9 @@ app.get("/", (req, res) => {
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(MONGO_URL, {});
+    await mongoose.connect(MONGO_URL, {
+      serverSelectionTimeoutMS: 10000,
+    });
     console.log("Connected to MongoDB");
 
     app.listen(PORT, () => {
